@@ -14,7 +14,18 @@ const images = [
 ];
 
 
-// const galleryEl = document.querySelector(".gallery");
+const galleryEl = document.querySelector(".gallery");
 
-// const img = images.map((image) => `<li><img url=${image.url} alt=${image.alt}></li>`).join("");
-// galleryEl.insertAdjacentHTML("beforeend", img);
+const img = images
+  .map(image => `<li><img src=${image.url} width='350' height='200' alt='${image.alt}'></li>`)
+  .join("");
+
+galleryEl.insertAdjacentHTML("beforeend", img);
+
+galleryEl.style.listStyle = 'none';
+galleryEl.style.display = 'flex';
+galleryEl.style.flexWrap = 'wrap';
+galleryEl.style.gap = '10px';
+galleryEl.style.justifyContent = 'space-around';
+galleryEl.style.padding = '0';
+galleryEl.style.margin = '0';
